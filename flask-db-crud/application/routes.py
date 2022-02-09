@@ -16,7 +16,7 @@ def view():
         tasks_string += "<br>"+ task.name
     return tasks_string
 
-@app.route('/change/<name>')
+@app.route('/change/<task>')
 def change(name):
     first_task = Tasks.query.first()
     first_task.name = name
@@ -29,3 +29,19 @@ def delete():
     db.session.delete(first_task)
     db.session.commit()
     return "You have deleted the first task in the database"
+
+@app.route('/completed')
+def completed():
+    first_task = Tasks.query.first()
+    first_task.completed = True 
+    db.session.commit()
+    return "Completed"
+     
+
+@app.route('/incomplete')
+def incomplete():
+    first_task = Tasks.query.first()
+    first_task.completed = False 
+    db.session.commit()
+    return "Incompleted"
+    
