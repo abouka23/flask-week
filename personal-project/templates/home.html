@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Simple form</title>
+    </head>
+    <body>
+        <div class='form'>
+            <form method='POST' action=''>
+                {{ form.hidden_tag() }}
+                {{ form.user_name.label }} {{ form.user_name }}
+                <br>
+                {{ form.age.label }} {{ form.age }}
+                <br>
+                {{ form.gender.label }} {{ form.gender }}
+                <br>
+                {{ form.race.label }} {{ form.race }}
+                <br>
+                {{ form.class_selection.label }} {{ form.class_selection }}
+                <br>
+                {{ form.submit }}
+                <br>
+            {{ message }}
+            </form>
+        </div>
+    </body>
+</html>
